@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>Coin</title>
+</head>
+<body>
+    
+
+
+       <p>coin toose</p> 
+
+        <button onclick=" 
+        
+        let result = pickCoinResult() 
+
+        if(result === 'Head'){
+            alert('You pick Head. Head comes. You Win');
+        }
+        else if (result === 'Tail' ){
+            alert('You pick Head. Tail comes. You lose');
+        }
+
+        
+        ">Head</button>
+
+        <button
+        onclick=" 
+        
+         result = pickCoinResult() 
+
+        if(result === 'Head'){
+            alert('You pick Tail. Head comes. You lose');
+        }
+        else if (result === 'Tail' ){
+            alert('You pick Tail. Tail comes. You win');
+        }
+
+        
+        "
+        >Tail</button>
+
+
+    <script>
+        function pickCoinResult(){
+
+           const Move = Math.random();
+           let result = '';
+
+            if(Move>=0 && Move <0.5 )
+            {
+                result = 'Tail';
+            }
+            else if ( Move >=0.5 && Move <1)
+            {
+                result = 'Head';
+            }
+
+            return result;
+
+        }
+    </script>
+
+</body>
+</html>

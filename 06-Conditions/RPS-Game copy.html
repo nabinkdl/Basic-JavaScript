@@ -8,79 +8,75 @@
     <P> Scissor Paper Rock</P>
 
 
-    <Button onclick="
-
+    <Button onclick=
+    "
     pickComputerMove();
-    
-    if(computerMove === 'Scissor'){
-        result = 'Tie';
-    }
-
-    else if(computerMove === 'Paper'){
-        result = 'You Win';
-    }
-
-    else if(computerMove === 'Rock'){
-        result = 'You lose.'
-    }
-
-
-    console.log(computerMove);
-    console.log(result);
-    alert(`You Pick Scissor. Computer pick ${computerMove}. ${result}.`);
+    PlayerMove('Scissor');
     ">Scissor</Button>
 
 
-    <button onclick="
-
-    computerMove = pickComputerMove();
-    
-    if(computerMove === 'Scissor'){
-        result = 'You lose.';
-    }
-
-    else if(computerMove === 'Paper'){
-        result = 'Tie';
-    }
-
-    else if(computerMove === 'Rock'){
-        result = 'You Win.'
-    }
-
-
-    console.log(computerMove);
-    console.log(result);
-    alert(`You Pick Paper. Computer pick ${computerMove}. ${result}.`);
-   
-    ">Paper</button>
-    <button
-    onclick="
-
-    computerMove = pickComputerMove();
-    
-    if(computerMove === 'Scissor'){
-        result = 'You Win.';
-    }
-
-    else if(computerMove === 'Paper'){
-        result = 'You Lose.';
-    }
-
-    else if(computerMove === 'Rock'){
-        result = 'Tie.'
-    }
-
-    
-    console.log(computerMove);
-    console.log(result);
-    alert(`You Pick Rock. Computer pick ${computerMove}. ${result}.`);
-   
+    <button onclick=
     "
-    >Rock</button>
+    computerMove = pickComputerMove();
+    PlayerMove('Paper');
+    ">Paper</button>
 
-    <script>
+
+    <button
+    onclick=
+    "
+    computerMove = pickComputerMove();
+    PlayerMove('Rock');
+    ">Rock</button>
+
+<script>
         let computerMove = '';
         let result = '';
+
+        function PlayerMove(PlayerMove){
+                        if (PlayerMove = 'Paper'){
+                            
+                                                if(computerMove === 'Scissor'){
+                                                    result = 'You lose.';
+                                                }
+
+                                                else if(computerMove === 'Paper'){
+                                                    result = 'Tie';
+                                                }
+
+                                                else if(computerMove === 'Rock'){
+                                                    result = 'You Win.'
+                                                }
+                        } else if (PlayerMove = 'Rock'){
+                                                if(computerMove === 'Scissor'){
+                                                    result = 'You Win.';
+                                                }
+
+                                                else if(computerMove === 'Paper'){
+                                                    result = 'You Lose.';
+                                                }
+
+                                                else if(computerMove === 'Rock'){
+                                                    result = 'Tie.'
+                                                }
+                        } else if (PlayerMove = 'Scissor'){                                   
+                                                if(computerMove === 'Scissor'){
+                                                    result = 'Tie';
+                                                }
+
+                                                else if(computerMove === 'Paper'){
+                                                    result = 'You Win';
+                                                }
+
+                                                else if(computerMove === 'Rock'){
+                                                    result = 'You lose.'
+                                                }
+
+
+                        }
+         alert(`You Pick ${PlayerMove}. Computer pick ${computerMove}. ${result}.`);
+        }
+
 
         function pickComputerMove(){
         
@@ -102,7 +98,7 @@
                                        return computerMove;
 
                                     }
-    </script>
+</script>
 
 </body>
 </html>

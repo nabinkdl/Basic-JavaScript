@@ -33,8 +33,31 @@
         let computerMove = '';
         let result = '';
 
+
+
+        function pickComputerMove(){  
+                                        const RandomMove = Math.random();
+
+                                        if(RandomMove >=0 && RandomMove < 1/3){
+                                                computerMove = 'Scissor';
+                                        }
+
+                                        else if(RandomMove >=1/3 && RandomMove <2/3){
+                                                computerMove = 'Paper';
+                                        }
+
+
+                                        else if (RandomMove >= 2/3 && RandomMove < 1){
+                                                computerMove = 'Rock';
+                                        }
+
+                                    return computerMove;
+
+                                    }
+                                    
+
         function PlayerMove(PlayerMove){
-                        if (PlayerMove = 'Paper'){
+                        if (PlayerMove === 'Paper'){
                             
                                                 if(computerMove === 'Scissor'){
                                                     result = 'You lose.';
@@ -47,7 +70,7 @@
                                                 else if(computerMove === 'Rock'){
                                                     result = 'You Win.'
                                                 }
-                        } else if (PlayerMove = 'Rock'){
+                        } else if (PlayerMove === 'Rock'){
                                                 if(computerMove === 'Scissor'){
                                                     result = 'You Win.';
                                                 }
@@ -59,7 +82,7 @@
                                                 else if(computerMove === 'Rock'){
                                                     result = 'Tie.'
                                                 }
-                        } else if (PlayerMove = 'Scissor'){                                   
+                        } else if (PlayerMove === 'Scissor'){                                   
                                                 if(computerMove === 'Scissor'){
                                                     result = 'Tie';
                                                 }
@@ -78,26 +101,6 @@
         }
 
 
-        function pickComputerMove(){
-        
-                                        const RandomMove = Math.random();
-
-                                        if(RandomMove >=0 && RandomMove < 1/3){
-                                                computerMove = 'Scissor';
-                                        }
-
-                                        else if(RandomMove >=1/3 && RandomMove <2/3){
-                                                computerMove = 'Paper';
-                                        }
-
-
-                                        else if (RandomMove >= 2/3 && RandomMove < 1){
-                                                computerMove = 'Rock';
-                                        }
-
-                                       return computerMove;
-
-                                    }
 </script>
 
 </body>

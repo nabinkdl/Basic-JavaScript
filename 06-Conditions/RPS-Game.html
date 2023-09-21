@@ -1,0 +1,53 @@
+
+<html>
+<head>
+  
+    <title>RSP-Game</title>
+</head>
+<body>
+    <P> Scissor Paper Rock</P>
+
+
+    <Button onclick="
+
+    const RandomMove = Math.random();
+    let computerMove = '';
+    let result = '';
+
+    if(RandomMove >=0 && RandomMove < 1/3){
+            computerMove = 'Scissor';
+    }
+
+    else if(RandomMove >=1/3 && RandomMove <2/3){
+            computerMove = 'Paper';
+    }
+
+
+    else if (RandomMove >= 2/3 && RandomMove < 1){
+            computerMove = 'Rock';
+    }
+
+    if(computerMove === 'Scissor'){
+        result = 'Tie';
+    }
+
+    else if(computerMove === 'Paper'){
+        result = 'You Win';
+    }
+
+    else if(computerMove === 'Rock'){
+        result = 'You lose.'
+    }
+
+    alert(`You Pick Scissor. Computer pick ${computerMove}. ${result}.`);
+
+
+    
+    ">Scissor</Button>
+    <button>Paper</button>
+    <button>Rock</button>
+
+
+
+</body>
+</html>

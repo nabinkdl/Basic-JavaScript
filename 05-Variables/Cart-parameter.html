@@ -14,6 +14,9 @@
     <button onclick="cartQuantity(5)">+5</button>
     <button onclick="cartQuantity(10)">+10</button>
     <button onclick="cartQuantity('RESET')">Reset Cart</button>
+    <p>
+        <p id="cartQuantityDisplay">Cart Quantity: 0</p>
+    </p>
 
 
 
@@ -24,8 +27,12 @@
                                     Quantity === 'RESET' ?  CartQuantity = CartQuantity * 0 : CartQuantity = Quantity + CartQuantity;
 
                                     Quantity === 'RESET' ? console.log(`Cart Quantity RESET : ` + CartQuantity) : Quantity === 0 ? console.log(`Cart Quantity SHOW : ` + CartQuantity) :  console.log(`Cart Quantity : ` + CartQuantity);
-                                }
 
+                                const cartQuantityDisplay = document.getElementById('cartQuantityDisplay');
+                                cartQuantityDisplay.textContent = `Cart Quantity: ${CartQuantity}`;
+
+                                }
+                                
     
 
     

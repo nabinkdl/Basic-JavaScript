@@ -23,13 +23,18 @@
    <script>
     let CartQuantity = 0;
 
-    function cartQuantity(Quantity){
-                                    Quantity === 'RESET' ?  CartQuantity = CartQuantity * 0 : CartQuantity = Quantity + CartQuantity;
-
-                                    Quantity === 'RESET' ? console.log(`Cart Quantity RESET : ` + CartQuantity) : Quantity === 0 ? console.log(`Cart Quantity SHOW : ` + CartQuantity) :  console.log(`Cart Quantity : ` + CartQuantity);
+    function cartQuantity(Quantity){ if (0<= Quantity + CartQuantity && Quantity + CartQuantity <=100 )
+                             {
+                                Quantity === 'RESET' ?  CartQuantity = CartQuantity * 0 : CartQuantity = Quantity + CartQuantity;
+                                Quantity === 'RESET' ? console.log(`Cart Quantity RESET : ` + CartQuantity) : Quantity === 0 ? console.log(`Cart Quantity SHOW : ` + CartQuantity) :  console.log(`Cart Quantity : ` + CartQuantity);
 
                                 const cartQuantityDisplay = document.getElementById('cartQuantityDisplay');
                                 cartQuantityDisplay.textContent = `Cart Quantity: ${CartQuantity}`;
+                            }
+
+
+                            else { alert(`Exced Cart Limits`);}
+
 
                                 }
                                 

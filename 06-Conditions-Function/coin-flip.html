@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Coin Flip </title>
+</head>
+<body>
+
+
+    <button onclick="flip('HEAD')">HEAD</button>
+    <button onclick="flip('TAIL')">TAIL</button>
+
+
+
+    <script>
+        function flip(select){
+
+            randomResult = Math.random();
+
+            randomResult>0.5 ? flipResult = 'HEAD' : flipResult = 'TAIL';
+            select === flipResult ? result =' You win.🎉' : result = 'You Lose.😆';
+            alert(`You choose ${select}. ${flipResult} comes. ${result} `);
+
+
+        }
+    </script>
+    
+</body>
+</html>

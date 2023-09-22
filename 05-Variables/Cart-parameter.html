@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>  
+    <title>Cart-parameter</title>
+</head>
+<body>
+
+
+    <button onclick="cartQuantity(0)">Show Cart Quantity</button>
+    <button onclick="cartQuantity(1)">Add to Cart</button>
+    <button onclick="cartQuantity(2)">+2</button>
+    <button onclick="cartQuantity(3)">+3</button>
+    <button onclick="cartQuantity(4)">+4</button>
+    <button onclick="cartQuantity(5)">+5</button>
+    <button onclick="cartQuantity(10)">+10</button>
+    <button onclick="cartQuantity('RESET')">Reset Cart</button>
+
+
+
+   <script>
+    let CartQuantity = 0;
+
+    function cartQuantity(Quantity){
+                                    Quantity === 'RESET' ?  CartQuantity = CartQuantity * 0 : CartQuantity = Quantity + CartQuantity;
+
+                                    Quantity === 'RESET' ? console.log(`Cart Quantity RESET : ` + CartQuantity) : Quantity === 0 ? console.log(`Cart Quantity SHOW : ` + CartQuantity) :  console.log(`Cart Quantity : ` + CartQuantity);
+                                }
+
+    
+
+    
+   </script>
+
+
+    
+</body>
+</html>

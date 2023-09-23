@@ -7,13 +7,20 @@
 
 
     <script>
-        const product = {
-                            name: 'Jacket',
+        const product = {   name: 'Jacket',
                             cost: 999,
                             size: 'XXl',
                         }
                 console.log(product);
                 console.log(product.name, product.cost);
+
+                product.height = 55;
+
+                console.log(product);
+
+                delete product.cost;
+
+                console.log(product);
     </script>
 </body>
 </html>

@@ -6,12 +6,8 @@
 </head>
 <body>
 
-
-    <button onclick="flip('😇HEAD')">HEAD</button>
-    <button onclick="flip('🐍TAIL')">TAIL</button>
-
-
-
+    <button onclick="flip('😇HEAD')">😇HEAD</button>
+    <button onclick="flip('🐍TAIL')">TAIL🐍</button>
     <script>
         function flip(select){
 
@@ -19,7 +15,9 @@
 
             randomResult>0.5 ? flipResult = '😇HEAD' : flipResult = '🐍TAIL';
             select === flipResult ? result =' You win.😘😘' : result = 'You Lose.😂😂';
-            alert(` ${result} 
+            alert(`
+${result} 
+
  You choose ${select}. ${flipResult} comes.`);
 
 

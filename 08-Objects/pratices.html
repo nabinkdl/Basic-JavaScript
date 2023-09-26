@@ -7,6 +7,7 @@
     <button onclick="Move(); resultOutput('Scissor')">Scissor</button>
     <button onclick="Move(); resultOutput('Paper')">Paper</button>
     <button onclick="Move(); resultOutput('Rock')">Rock</button>
+    <button onclick="Reset()">Reset</button>
 
 
 
@@ -92,11 +93,19 @@
                                                                     }
 
 
-                                                console.log(`You choose ${playerMove}. ${computerMove} comes.| Result: ${result} | <br> win:${score.win} lose:${score.lose} tie:${score.tie}`)
+                                                console.log(`You choose ${playerMove}. ${computerMove} comes.| Result: ${result} |  win:${score.win} lose:${score.lose} tie:${score.tie}`)
 
 
 
                                                 }
+                        function Reset()
+                        {
+                                            score.lose = 0 ;
+                                            score.win = 0 ;
+                                            score.tie = 0 ;
+
+                                            console.log(`Reset Score |  win:${score.win} lose:${score.lose} tie:${score.tie}`)
+                        }
        
 
     </script>

@@ -1,0 +1,36 @@
+<html>
+<head>
+    <title>Object-8e</title>
+</head>
+<body>
+    <script>
+
+        const product1 = {
+                        name: 'Football',
+                        price: 400,
+                        };
+        const product2 = {
+                        name: 'Football',
+                        price: 300,
+                        }
+
+        function isSameProduct(product1,product2){
+                                                    const value1 = JSON.stringify(product1);
+                                                    const value2 = JSON.stringify(product2);
+                                                    if(value1 === value2)return true; return false;
+                                                 };
+
+
+    console.log(isSameProduct(product1,product2));
+
+
+    console.log('test'.repeat(2));
+
+
+    </script>
+
+
+
+
+</body>
+</html>

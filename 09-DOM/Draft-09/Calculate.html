@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Calculate</title>
+</head>
+<body">
+
+    <p onsuspend="">Amazon Shopping Cart</p>
+
+    <input class="js-inputCost" placeholder="Cost of Order" onkeydown="handelEvent();">
+
+    <button onclick="coatCal()">Calculate</button>
+
+    <p>Your Total Cost :  <span class="js-totalCost">   </span></p>
+
+    <script>
+
+        function handelEvent(){
+
+            if(event.key === 'Enter') coatCal();
+
+        }
+
+        function coatCal(){
+        const inputCost = document.querySelector('.js-inputCost');
+        let totalCost = Number(inputCost.value);
+   
+
+        if(totalCost<50){
+            totalCost += 10;
+        }
+        console.log(totalCost);
+          document.querySelector('.js-totalCost').innerHTML = `${totalCost}`;
+        };
+
+    </script>
+
+  
+</body>
+</html>

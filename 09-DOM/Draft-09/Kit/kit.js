@@ -16,4 +16,5 @@ function calc(){
         totalCost +=10;
     }
     console.log(`$${totalCost}`);
+    document.querySelector('.js-total').innerHTML= `$${totalCost}`;
 }

@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="./Kit/kit.js"></script>
+    <link rel="stylesheet" href="./Kit/style.css">
     <title>DOM-Exercise</title>
+
 </head>
 <body>
-    <p>YouTube Subscribe Button</p>
-    <button class="js-subBtn subBtn">Subscribe</button>
 
-    <p>Amazon Shipping Calculator</p>
-    <p>Orders under $40 = +$10 shipping.</p>
-    <p>Orders over $40 = FREE shipping.</p>
+    <p class="title">YouTube Subscribe Button</p>
+    <button class="js-subBtn subBtn" onclick="subClick();">Subscribe</button>
 
-    <input class="js-input">
-    <button class="js-eval evalBtn">Calculate</button>
+    <p class="title">Amazon Shipping Calculator</p>
+    <p class="title">Orders under $40 = +$10 shipping.</p>
+    <p class="title">Orders over $40 = FREE shipping.</p>
+
+    <input class="js-input" placeholder="Cost of order">
+    <button class="js-eval evalBtn" onclick="calc();">Calculate</button>
+    <p class="js-total"></p>
     
 </body>
 </html>

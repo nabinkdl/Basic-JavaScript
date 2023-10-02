@@ -1,0 +1,207 @@
+
+<html>
+<head>
+  
+    <title>RSP-Game</title>
+</head>
+<body>
+
+
+<style>
+
+    body{
+        background-color: #262626;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    div{
+        margin-left: 10px;
+    }
+
+
+
+   
+
+    .button-btn{
+        background-color: transparent;
+        border: 3px solid white;
+        border-radius: 60px;
+        height: 120px;
+        width: 120px;
+        cursor: pointer;
+        margin: 5px;
+    }
+    
+    .resetBtn{
+        background-color: white;
+        padding: 10px 24px;
+        border: 2px solid white;
+        color: rgb(0, 0, 0);
+    }
+
+    .move-icon{
+        height: 60px;
+    }
+    h2{
+        margin-top: 20px;
+        margin-left: 5px;
+    }
+</style>
+
+
+
+
+
+<div class="main-div">
+
+    <h2> Scissor Paper Rock</h2>
+
+
+    <Button class="button-btn" onclick=
+    "
+    pickComputerMove();
+    PlayerMove('Scissor');
+    "><img src="./image/Scissor-emoji.png" alt="" class="move-icon"></button></Button>
+
+
+    <button class="button-btn" onclick=
+    "
+    computerMove = pickComputerMove();
+    PlayerMove('Paper');
+    "><img src="./image/Paper-emoji.png" alt="" class="move-icon"></button></button>
+
+
+    <button class="button-btn"
+    onclick=
+    "
+    computerMove = pickComputerMove();
+    PlayerMove('Rock');
+    "><img src="./image/Rock-emoji.png" alt="" class="move-icon"></button>
+
+<div>
+    <p class="js-result"></p>
+    <p class="js-score">Win: 0 Lose: 0 Tie: 0</p>
+
+    <button onclick=
+        "
+            score.win = 0;
+            score.loose = 0;
+            score.tie = 0;
+            resetScore();
+        " class=".js-reset resetBtn">
+        Reset Score
+    </button>
+</div>
+
+</div>
+<script>
+        let computerMove = '';
+        let result = '';
+
+
+        const score = {
+                        win: 0,
+                        tie: 0,
+                        loose: 0,
+        };
+
+        
+    //   function  resetScore(){
+    //                         score.win = 0;
+    //                         score.loose = 0;
+    //                         score.tie = 0;                                
+    //                         };
+
+        function pickComputerMove(){  
+                                        const RandomMove = Math.random();
+
+                                        if(RandomMove >=0 && RandomMove < 1/3){
+                                                computerMove = 'Scissor';
+                                        }
+
+                                        else if(RandomMove >=1/3 && RandomMove <2/3){
+                                                computerMove = 'Paper';
+                                        }
+
+
+                                        else if (RandomMove >= 2/3 && RandomMove < 1){
+                                                computerMove = 'Rock';
+                                        }
+
+                                    return computerMove;
+
+                                    }
+                                    
+
+        function PlayerMove(PlayerMove){
+                        if (PlayerMove === 'Paper'){
+                            
+                                                if(computerMove === 'Scissor'){
+                                                    result = 'You LOSE';
+                                                }
+
+                                                else if(computerMove === 'Paper'){
+                                                    result = 'TIE';
+                                                }
+
+                                                else if(computerMove === 'Rock'){
+                                                    result = 'You WIN';
+                                                }
+                        } else if (PlayerMove === 'Rock'){
+                                                if(computerMove === 'Scissor'){
+                                                    result = 'You WIN';
+                                                }
+
+                                                else if(computerMove === 'Paper'){
+                                                    result = 'You LOSE';
+                                                }
+
+                                                else if(computerMove === 'Rock'){
+                                                    result = 'TIE';
+                                                }
+                        } else if (PlayerMove === 'Scissor'){                                   
+                                                if(computerMove === 'Scissor'){
+                                                    result = 'TIE';
+                                                }
+
+                                                else if(computerMove === 'Paper'){
+                                                    result = 'You WIN';
+                                                }
+
+                                                else if(computerMove === 'Rock'){
+                                                    result = 'You LOSE'
+                                                }};
+
+
+                if(result === 'TIE'){
+                    score.tie ++;
+                }
+                else if(result === 'You WIN'){
+                    score.win ++;
+                }
+                else if(result === 'You LOSE'){
+                    score.loose ++;
+                }
+
+                
+
+                document.querySelector('.js-result').innerHTML =`<h2>${result}</h2>`;
+                document.querySelector('.js-score').innerHTML =`You <img src="./image/${PlayerMove}-emoji.png" alt="" class="move-icon">  <img src="./image/${computerMove}-emoji.png" alt="" class="move-icon"> Computer  <br>Win: ${score.win} Lose: ${score.loose} Tie: ${score.tie} `;
+
+               
+
+        }
+
+        function resetScore(){
+                                document.querySelector('.js-result').innerHTML =`<h2></h2>`;
+                                document.querySelector('.js-score').innerHTML =` Win: ${score.win} Lose: ${score.loose} Tie: ${score.tie}`;
+                            };
+
+
+
+
+</script>
+
+</body>
+</html>

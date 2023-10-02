@@ -1,8 +1,5 @@
 
-
 const TodoList = [];
-
-
 
 function renderTodo(){
     let totalList = '';
@@ -15,13 +12,13 @@ function renderTodo(){
         // const {dueDate} = todo;
         const {name, dueDate} = todoObj;
 
-        const html = `<p>${name} ${dueDate}
+        const html = `<div class="todo-grid"><div>${name} </div><div>${dueDate}</div>
         
-        <button onclick="
+        <button class="deltBtn" onclick="
 
         TodoList.splice(${i},1); renderTodo();
 
-        ">Delete</button></p>`;
+        ">Delete</button></div>`;
         totalList += html;
     }
     document.querySelector('.js-todoList').innerHTML = totalList;

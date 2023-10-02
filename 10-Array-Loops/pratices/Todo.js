@@ -30,16 +30,16 @@ function renderTodo(){
     let totalList = '';
     for(i=0; i<TodoListTwo.length; i++){
         const todo = TodoListTwo[i];
-        const html = `<p>${todo}<button onclick="
+        const html = `<p>${todo}
+        
+        <button onclick="
 
-        TodoListTwo.splice(${i},1);
-        renderTodo();
+        TodoListTwo.splice(${i},1); renderTodo();
 
         ">Delete</button></p>`;
         totalList = totalList + html;
     }
     document.querySelector('.js-todoList').innerHTML = totalList;
-    console.log(totalList);
-    console.log(TodoListTwo);};
+    };
 
     
